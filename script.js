@@ -546,3 +546,24 @@ map.on('zoomend', function() {
 });
 // Dispara inicialmente para aplicar a lógica no zoom inicial
 map.fire('zoomend');
+
+// script.js – início
+const GEOJSON_BASE = "https://raw.githubusercontent.com/rcosta1974webgis/geoportalsjc/main/data";
+const LAYERS = {
+  hidrografia: {
+    name: "Hidrografia (ANA)",
+    url: `${GEOJSON_BASE}/Hidrografia_ANA.geojson`,
+    style: { color: "#0066ff", weight: 2 }
+  },
+  reservaLegal: {
+    name: "Reserva Legal",
+    url: `${GEOJSON_BASE}/Reserva_Legal.geojson`,
+    style: { color: "#2ecc71", weight: 2 }
+  },
+  imovelCAR: {
+    name: "Imóvel Consolidado (CAR)",
+    url: `${GEOJSON_BASE}/Imovel_Consolidado_CAR.geojson`,
+    style: { color: "#ff7800", weight: 2 }
+  }
+  // …outros layers menores podem permanecer em “public/data/…”
+};
